@@ -1,0 +1,207 @@
+nav {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    position: fixed;
+    z-index: 999;
+}
+.content {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+}
+.logoCenter {
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    transition: all 0.5s ease-in-out;
+}
+.logoCenter img {
+    width: 60px;
+    height: 50px;
+    cursor: pointer;
+}
+.rightLinks, .leftLinks {
+    width: 200px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 15px 40px;
+    background-color: #ffff;
+    font-size: 20px;
+    opacity: 1;
+}
+.rightLinks a, .leftLinks a {
+    color: black;
+    text-decoration: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+}
+.rightLinks {
+    border-radius: 20px 0px 0px 20px;
+    transform: translateX(-150px);
+}
+.leftLinks {
+    border-radius: 0px 20px 20px 0px;
+    transform: translateX(150px);
+}
+
+.logoCenter.open {
+    animation: logoAnim 0.5s ease-in-out forwards;
+}
+.logoCenter.close {
+    animation: logoClose 0.5s ease-in-out forwards;
+}
+
+.rightLinks.open {
+    display: flex;
+    animation: rightLinksAnim 0.5s ease-in-out forwards;
+}
+.leftLinks.open {
+    display: flex;
+    animation: leftLinksAnim 0.5s ease-in-out forwards;
+}
+.rightLinks.close {
+    display: none;
+    animation: rightLinksAnimClose 0.5s ease-in-out reverse forwards;
+}
+.leftLinks.close {
+    display: none;
+    animation: leftLinksAnimClose 0.5s ease-in-out reverse forwards;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                               Keyframes logo                               */
+/* -------------------------------------------------------------------------- */
+
+@keyframes logoAnim {
+    from {
+        transform: rotate(0deg);
+        background: linear-gradient(45deg, #ffffff47 0%, #ffffff47 99%, #ffffff47 100%);
+    }
+    to {
+        transform: rotate(360deg);
+        background: linear-gradient(135deg, #ff9b9b, #ff6d6d);
+
+    }
+}
+
+/* ------------------------------- close logo ------------------------------- */
+
+@keyframes logoClose {
+    from {
+        transform: rotate(360deg);
+        background: #702a9b;
+        background: linear-gradient(175deg,rgba(112, 42, 155, 1) 0%, rgba(199, 87, 87, 1) 50%, rgba(83, 201, 237, 1) 100%);
+    }
+    to {
+        transform: rotate(0deg);    
+        background: transparent;
+    }
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                        Keyframes right / left links                        */
+/* -------------------------------------------------------------------------- */
+
+@keyframes rightLinksAnim {
+    from {
+        opacity: 0;
+        transform: translateX(150px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+@keyframes leftLinksAnim {
+    from {
+        opacity: 0;
+        transform: translateX(-150px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+/* ------------------------------- close links ------------------------------ */
+
+@keyframes rightLinksAnimClose {
+    from {
+        opacity: 0;
+        transform: translateX(150px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes leftLinksAnimClose {
+    from {
+        opacity: 0;
+        transform: translateX(-150px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+
+
+/* -------------------------------------------------------------------------- */
+/*                      Media Queries for responsiveness                      */
+/* -------------------------------------------------------------------------- */
+
+@media (max-width: 655px) {
+    .logoCenter {
+        padding: 15px;
+    }
+    .logoCenter img {
+        width: 40px;
+        height: fit-content;
+    }
+    .rightLinks, .leftLinks {
+        width: 150px;
+        gap: 30px;
+        padding: 10px 30px;
+        font-size: 16px;
+    }
+}
+@media (max-width: 494px) {
+    .content {
+        display: flex;
+        flex-direction: column;
+    }
+    .logoCenter {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+    .rightLinks, .leftLinks {
+        width: 250px;
+        gap: 20px;
+        padding: 10px 0px;
+        font-size: 16px;
+        border-radius: 20px;
+        position: absolute;
+        left: 10px;
+    }
+    .rightLinks {
+        top: 90px;
+    }
+    .leftLinks {
+        top: 150px;
+    }
+}

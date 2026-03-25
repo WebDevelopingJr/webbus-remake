@@ -1,0 +1,30 @@
+.gridContainer {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.24) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.24) 1px, transparent 1px);
+}
+.gridCell {
+    background-color: rgb(19, 19, 19);
+    box-shadow: inset 0 0 0 1px rgba(161, 161, 161, 0.108);
+    transition: 0.3s;
+}
+.grid-blue {
+    background-color: rgba(64, 61, 250, 0.133);
+    box-shadow: inset 0 0 0 1px rgba(124,106,255,0.2);
+    transition: 0.3s;
+}
+.grid-cyan {
+  background: rgba(0, 213, 255, 0.143);
+  box-shadow: inset 0 0 0 1px rgba(0,212,255,0.15);
+  transition: 0.3s;
+}
+
+.grid-white {
+  background: rgba(217, 224, 84, 0.125);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
+  transition: 0.3s;
+}
+

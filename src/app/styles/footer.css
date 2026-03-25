@@ -1,0 +1,274 @@
+/* -------------------------------------------------------------------------- */
+/*                                 Banner part                                */
+/* -------------------------------------------------------------------------- */
+
+.bannerContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 450px;
+    background-image: url(../tools-img/home/pattern-banner.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    z-index: 3;
+}
+.banner_container::before {
+    content: '';
+    width: 60%;
+    height: 300px;
+    border-radius: 50%;
+    top: 50%;
+    transform: translate(0, -50%);
+    background-color: #fe82821f;
+    filter: blur(90px);
+    position: absolute;
+    z-index: 1;
+}
+.banner_container {
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.paragrah_container {
+    width: auto;
+    position: relative;
+    z-index: 2;
+}
+.paragrah_container h1 {
+    color: #fff;
+    font-family: "Instrument Serif", serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 100px;
+    margin: 10px 0;
+}
+.paragrah_container .coloredText {
+    background-image: linear-gradient(to right, #ED2236, #ff3333, #ff6666);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.banner_rest {
+    width: 600px;
+    text-align: center;
+    color: #B6B6B6;
+    position: relative;
+    z-index: 3;
+}
+.banner_buttons {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+.banner_buttons a {
+    text-decoration: none;
+}
+.banner_buttons a:nth-child(1) {
+    width: auto;
+    padding: 15px 30px;
+    background-color: #BA5252;
+    border-radius: 20px;
+    color: #ffff;
+    transition: 0.3s ease;
+}
+.banner_buttons a:nth-child(1):hover {
+    background-color: #ce4343;
+    transform: scale(1.05);
+    transition: 0.3s ease;
+}
+.banner_buttons a:nth-child(2) {
+    width: auto;
+    padding: 15px 30px;
+    background-color: transparent;
+    border: 2px solid #c4c4c4;
+    color: #c4c4c4; 
+    border-radius: 20px;
+    transition: 0.3s ease;
+}
+.banner_buttons a:nth-child(2):hover {
+    background-color: #5F5F5F;
+    color: #fff;
+    transition: 0.3s ease;
+}
+.banner_icons {
+    width: auto;
+    background-color: #ffffff8c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 12px 20px;
+    border-radius: 10px;
+    margin-top: 80px;
+}
+.banner_icons_inside {
+    position: relative;
+    transition: 0.2s linear;
+}
+.banner_icons_inside img {
+    width: 60px;
+    height: fit-content;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: #dfdfdfac;
+    transition: 0.2s linear;
+}
+.banner_icons_inside:hover img{
+    transform: translate(0px, -50px) scale(1.1);
+    transition: 0.2s linear;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   FOOTER                                   */
+/* -------------------------------------------------------------------------- */
+
+.footer {
+    background-color: #0a0a0a;
+    display: flex;
+    flex-direction: column;
+    padding: 0 200px;
+    margin-top: 200px;
+}
+.footer_top {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 0;
+}
+.footer_top_leftText {
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.footer_top_leftText h1 {
+    color: #fff;
+    font-weight: 100;
+    margin: 0;
+}
+.footer_top_leftText p {
+    color: #838383;
+}
+.footer_top_leftText_aviability {
+    width: 200px;
+    background-color: #50dc3128;
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: #76C86A;
+    border: 2px solid #76C86A;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.footer_top_leftText_aviability span {
+    width: 10px;
+    height: 10px;
+    background-color: #76C86A;
+    display: block;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 2px #76C86A;
+}
+.footer_top_rightText {
+    display: flex;
+    gap: 60px;
+}
+.footer_top_info_container {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+}
+.footer_top_info_container a {
+    text-decoration: none;
+    color: #a7a7a7;
+    margin: 7px 0 7px 5px;
+    transition: 0.3s ease;
+}
+
+.footer_top_info_container a:hover {
+    color: #ed2339;
+    transition: 0.3s ease;
+}
+.footer_bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0;
+    border-top: 2px solid #777777;
+}
+.footer_bottom p {
+    color: #c3c3c3;
+}
+.footer_botom_icons {
+    display: flex;
+    gap: 20px;
+}
+
+@media (max-width: 1300px) {
+    .footer {
+        padding: 0 5%;
+    }
+}
+
+
+@media (max-width: 950px) {
+    /* --------------------------------- footer --------------------------------- */
+    .footer_top {
+        flex-direction: column;
+        gap: 50px;
+    }
+}
+@media (max-width: 800px) {
+    /* ------------------------------- Banner code ------------------------------ */
+    .paragrah_container h1 {
+        font-size: 70px;
+    }
+    .banner_rest {
+        width: 100%;
+    }
+    .banner_icons {
+        width: 90%;
+        flex-wrap: wrap;
+    }
+    .paragrah_container {
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 560px) {
+    /* --------------------------------- Banner --------------------------------- */
+
+    .paragrah_container h1 {
+        font-size: 50px;
+    }
+    .bannerContainer {
+        background-position: 50% 120%;
+        height: 720px;
+    }
+    .banner_container {
+        width: 90%;
+    }
+    .banner_icons {
+        width: 90%;
+        flex-wrap: wrap;
+    }
+    .banner_icons_inside img{
+        width: 50px;
+    }
+    /* --------------------------------- footer --------------------------------- */
+    .footer_top_leftText {
+        width: 90%;
+    }
+    .footer_bottom {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .footer_top_rightText {
+        flex-direction: column;
+    }
+}

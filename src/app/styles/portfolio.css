@@ -1,0 +1,301 @@
+#mainServices {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.textContainer {
+    width: 600px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 3;
+}
+.textContainer::before {
+    content: '';
+    width: 400px;
+    height: 200px;
+    position: absolute;
+    z-index: 1;
+    background-color: #e778786d;
+    border-radius: 100px;
+    filter:blur(80px);
+    box-shadow: 0px 0px 2px 10px #e77878;
+    top: 0;
+}
+.textContainer span {
+    color: #E77878;
+    z-index: 3;
+}
+.textContainer span::before {
+    content: '';
+    width: 35px;
+    height: 2px;
+    transform: translate(-50px, 6px);
+    background-color: #E77878;
+    position: absolute;
+    display: inline-block;
+    transition: 0.3s ease;
+}
+.textContainer span::after {
+    content: '';
+    width: 35px;
+    height: 2px;
+    transform: translate(15px, 6px);
+    background-color: #E77878;
+    position: absolute;
+    display: inline-block;
+    transition: 0.3s ease;
+}
+.textContainer span:hover::before {
+    width: 50px;
+    transform: translate(-70px, 6px);
+}
+.textContainer span:hover::after {
+    width: 50px;
+    transform: translate(25px, 6px);
+}
+.textContainer h1 {
+    color: #fff;
+    font-family: Instrument Serif, serif;
+    font-weight: 100;
+    font-size: 50px;
+    margin: 10px 0;
+    z-index: 3;
+}
+.textContainer h1:nth-child(3) {
+    background-image: linear-gradient(90deg, #df4242, #e77878, #f06161);
+    --webkit-background-clip: text;
+    background-clip: text;
+    --webkit-text-fill-color: transparent;
+    color: transparent;
+}
+.textContainer p {
+    color: #9e9e9e;
+    z-index: 3;
+}
+.itemsServices {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 10px;
+    z-index: 3;
+}
+.servItems {
+    width: auto;
+    color: #c4c4c4;
+    padding: 5px 10px;
+    background-color: #737373;
+    border-radius: 20px;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                              Service container                             */
+/* -------------------------------------------------------------------------- */
+
+.projectContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 200px;
+}
+.buttonsProjects {
+    display: flex;
+    gap: 20px;
+}
+.buttonsP {
+    width: auto;
+    padding: 5px 30px;
+    background-color: #737373;
+    color: #dadada;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.buttonsP::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #E77878, #f06161);
+    transition: left 0.3s ease;
+    z-index: -1;
+}
+
+.buttonsP:hover {
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(231, 120, 120, 0.6);
+}
+
+.buttonsP:hover::before {
+    left: 0;
+}
+
+.buttonsPActive {
+    background: linear-gradient(90deg, #E77878, #f06161);
+    color: #fff;
+    box-shadow: 0 0 20px rgba(231, 120, 120, 0.6);
+}
+
+.buttonsPActive::before {
+    left: 0;
+}
+
+
+/* ---------------------------- Service Container --------------------------- */
+
+.containerPortfolio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1800px;
+    margin: 150px auto 0;
+    padding: 0 20px;
+}
+
+
+/* ----------------------------- portfolio items ---------------------------- */
+
+.portfolio_items {
+    height: 600px;
+    background-color: #1c1c1c;
+    display: block;
+    transition: 0.5s;
+    border: 1px solid #3d3d3d;
+    overflow: hidden;
+}
+.portfolio_items .image {
+    width: 100%;
+    height: 60%;
+    overflow: hidden;
+}
+.portfolio_items .image img {
+    width: 100%;
+    height: 400px;
+    transition: 0.2s ease linear
+}
+.portfolio_items:hover .image .front_image {
+    transform: translate(0, -400px);
+    transition: 0.2s ease linear
+}
+.portfolio_items:hover .image .client_image {
+    transform: translate(0, -400px);
+    transition: 0.2s ease linear
+}
+
+.text_portfolio_container {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.text_portfolio_container h1 {
+    color: #ffff;
+    font-weight: 100;
+}
+.text_portfolio_container p {
+    color: #a4a4a4;
+}
+.tax_portfolio {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.web_design_tax {
+    background-color: #29b8265e;
+    color: #28b826;
+    border: 2px solid #28b826;
+    padding: 5px 10px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.graphic_design_tax {
+    background-color: #2698b85e;
+    color: #2698b8;
+    border: 2px solid #2698b8;
+    padding: 5px 10px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+
+/* -------------------------------------------------------------------------- */
+/*                                 Media Query                                */
+/* -------------------------------------------------------------------------- */
+
+
+@media (max-width:1200px) {
+    .portfolio_items .image img {
+        width: 100%;
+        height: 315px;
+    }
+    .portfolio_items .image {
+        width: 100%;
+        height: 50%;
+    }
+}
+@media (max-width: 1200px) {
+    .portfolio_items:hover .image .client_image {
+        transform: translate(0, -320px);
+    }
+}
+/* Tablet */
+@media (max-width: 1024px) {
+    .containerPortfolio {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    }
+
+    /* -------------------------- images inside the box ------------------------- */
+
+
+}
+
+@media (max-width: 740px) {
+    .buttonsProjects {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+/* Phone */
+@media (max-width: 600px) {
+    .containerPortfolio {
+        grid-template-columns: 1fr; /* 1 columna */
+    }
+    .textContainer {
+        width: 90%;
+    }
+    .itemsServices {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
