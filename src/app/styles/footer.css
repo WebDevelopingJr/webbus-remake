@@ -193,6 +193,12 @@
     color: #ed2339;
     transition: 0.3s ease;
 }
+.contact_info_links a {
+    background-color: #fff;
+    color: #0a0a0a;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
 .footer_bottom {
     display: flex;
     justify-content: space-between;

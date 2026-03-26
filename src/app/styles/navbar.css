@@ -1,207 +1,196 @@
-nav {
-    width: 100%;
-    height: 90px;
-    display: flex;
-    align-items: end;
-    justify-content: center;
+.header {
     position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translate(-50%, 0);
     z-index: 999;
 }
-.content {
-    width: 90%;
-    height: 100%;
+.header_items {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0px;
-}
-.logoCenter {
-    border-radius: 20px;
-    padding: 20px;
-    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 2;
-    transition: all 0.5s ease-in-out;
 }
-.logoCenter img {
-    width: 60px;
-    height: 50px;
+
+.header_items img {
+    width: 70px;
+    height: fit-content;
+    padding: 15px;
+    transition: 0.3s ease;
+    background-color: transparent;
+    border-radius: 20%;
     cursor: pointer;
 }
-.rightLinks, .leftLinks {
-    width: 200px;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    padding: 15px 40px;
-    background-color: #ffff;
-    font-size: 20px;
-    opacity: 1;
+.nav_items {
+    display: flex;
+    position: relative;
 }
-.rightLinks a, .leftLinks a {
-    color: black;
+@keyframes colorPulse {
+    0%, 100% {
+        background-color: #fff;
+    }
+    50% {
+        background-color: #f06161;
+        border: 2px solid #e83030;
+        color: #fff;
+    }
+}
+.nav_items a {
+    width: 100px;
     text-decoration: none;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 400;
+    text-align: center;
+    color: #000;
+    background-color: #fff;
+    padding: 10px 20px;
+    position: absolute;
+    border-radius: 20px;
 }
-.rightLinks {
-    border-radius: 20px 0px 0px 20px;
-    transform: translateX(-150px);
-}
-.leftLinks {
-    border-radius: 0px 20px 20px 0px;
-    transform: translateX(150px);
-}
-
-.logoCenter.open {
-    animation: logoAnim 0.5s ease-in-out forwards;
-}
-.logoCenter.close {
-    animation: logoClose 0.5s ease-in-out forwards;
-}
-
-.rightLinks.open {
-    display: flex;
-    animation: rightLinksAnim 0.5s ease-in-out forwards;
-}
-.leftLinks.open {
-    display: flex;
-    animation: leftLinksAnim 0.5s ease-in-out forwards;
-}
-.rightLinks.close {
-    display: none;
-    animation: rightLinksAnimClose 0.5s ease-in-out reverse forwards;
-}
-.leftLinks.close {
-    display: none;
-    animation: leftLinksAnimClose 0.5s ease-in-out reverse forwards;
+.nav_items img {
+    width: 30px;
+    background-image: linear-gradient(135deg, #f06161 0%, #c64040 50%, #d54242 100%);
+    padding: 10px;
+    border-radius: 20px;
+    position: absolute;
+    top: -20px;
+    left: -25px;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s ease;
+    cursor: pointer;
 }
 
-/* -------------------------------------------------------------------------- */
-/*                               Keyframes logo                               */
-/* -------------------------------------------------------------------------- */
+.nav_items img:hover {
+    transform: scale(1.2) rotate(15deg);
+    box-shadow: 0 4px 12px rgba(240, 97, 97, 0.4);
+}
+.service,
+.aboutus,
+.portfolio,
+.contact {
+    top: 0;
+    right: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s ease;
+}
 
-@keyframes logoAnim {
-    from {
-        transform: rotate(0deg);
-        background: linear-gradient(45deg, #ffffff47 0%, #ffffff47 99%, #ffffff47 100%);
+.service {
+    right: 0;
+    animation: float 4s ease-in-out infinite;
+}
+.aboutus {
+    animation: float 2.5s ease-in-out infinite;
+}
+.portfolio {
+    left: 0;
+    animation: float 3.2s ease-in-out infinite;
+}
+
+.contact {
+    left: 0;
+    animation: float 3s ease-in-out infinite;
+}
+
+.nav_items a:hover {
+    background-color: #f06161;
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(240, 97, 97, 0.3);
+}
+@keyframes float {
+    0% {
+        transform: translateY(0px) scale(1);
     }
-    to {
-        transform: rotate(360deg);
-        background: linear-gradient(135deg, #ff9b9b, #ff6d6d);
-
+    20% {
+        transform: translateY(-5px) scale(1.02);
     }
-}
-
-/* ------------------------------- close logo ------------------------------- */
-
-@keyframes logoClose {
-    from {
-        transform: rotate(360deg);
-        background: #702a9b;
-        background: linear-gradient(175deg,rgba(112, 42, 155, 1) 0%, rgba(199, 87, 87, 1) 50%, rgba(83, 201, 237, 1) 100%);
+    40% {
+        transform: translateY(-10px) scale(1.03);
     }
-    to {
-        transform: rotate(0deg);    
-        background: transparent;
+    60% {
+        transform: translateY(-6px) scale(1.02);
     }
-}
-
-
-/* -------------------------------------------------------------------------- */
-/*                        Keyframes right / left links                        */
-/* -------------------------------------------------------------------------- */
-
-@keyframes rightLinksAnim {
-    from {
-        opacity: 0;
-        transform: translateX(150px);
+    80% {
+        transform: translateY(-4px) scale(1.01);
     }
-    to {
-        opacity: 1;
-        transform: translateX(0px);
-    }
-}
-@keyframes leftLinksAnim {
-    from {
-        opacity: 0;
-        transform: translateX(-150px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0px);
-    }
-}
-/* ------------------------------- close links ------------------------------ */
-
-@keyframes rightLinksAnimClose {
-    from {
-        opacity: 0;
-        transform: translateX(150px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0px);
-    }
-}
-
-@keyframes leftLinksAnimClose {
-    from {
-        opacity: 0;
-        transform: translateX(-150px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0px);
+    100% {
+        transform: translateY(0px) scale(1);
     }
 }
 
 
+/* Active Header and all */
 
-/* -------------------------------------------------------------------------- */
-/*                      Media Queries for responsiveness                      */
-/* -------------------------------------------------------------------------- */
+.header_items .activeImg {
+    padding: 15px;
+    border-radius: 20px;
+    background-image: linear-gradient(135deg, #e85a6a 0%, #ea7070 50%, #b94949 100%);
+    transition: 0.3s ease;
+    transform: rotate(360deg);
+}
 
-@media (max-width: 655px) {
-    .logoCenter {
-        padding: 15px;
-    }
-    .logoCenter img {
-        width: 40px;
-        height: fit-content;
-    }
-    .rightLinks, .leftLinks {
-        width: 150px;
-        gap: 30px;
-        padding: 10px 30px;
-        font-size: 16px;
-    }
+.active_items {
+    transition: 0.3s ease;
 }
-@media (max-width: 494px) {
-    .content {
-        display: flex;
-        flex-direction: column;
-    }
-    .logoCenter {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-    }
-    .rightLinks, .leftLinks {
-        width: 250px;
-        gap: 20px;
-        padding: 10px 0px;
-        font-size: 16px;
-        border-radius: 20px;
-        position: absolute;
-        left: 10px;
-    }
-    .rightLinks {
-        top: 90px;
-    }
-    .leftLinks {
-        top: 150px;
-    }
+.active_items img {
+    opacity: 1;
+    pointer-events: all;
+    top: 40px;
+    left: -25px;
 }
+.active_items .service {
+    opacity: 1;
+    pointer-events: all;
+    top: 20px;
+    right: 120px;
+    transition: 0.3s ease;
+}
+.active_items .aboutus {
+    opacity: 1;
+    pointer-events: all;
+    top: 120px;
+    right: 60px;
+    transition: 0.3s ease;
+    
+}
+.active_items .portfolio {
+    opacity: 1;
+    pointer-events: all;
+    top: 20px;
+    left: 120px;
+    transition: 0.3s ease;
+}
+.active_items .contact {
+    opacity: 1;
+    pointer-events: all;
+    top: 120px;
+    left: 60px;
+    transition: 0.3s ease;
+}
+/*
+.nav_items img {
+    width: 30px;
+    background-image: linear-gradient(135deg, #f06161 0%, #c64040 50%, #d54242 100%);
+    padding: 10px;
+    border-radius: 20px;
+    position: absolute;
+    top: 30px;
+    left: -25px;
+}
+
+.service {
+    top: 10px;
+    right: 120px;
+}
+.aboutus {
+    top: 100px;
+    right: 60px;
+}
+.portfolio {
+    top: 10px;
+    left: 120px;
+}
+.contact {
+    top: 100px;
+    left: 60px;
+} */

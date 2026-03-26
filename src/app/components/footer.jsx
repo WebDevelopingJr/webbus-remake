@@ -41,8 +41,8 @@ export default function Footer() {
               <div className='banner_rest'>
                 <p>You have the idea. We have the craft. Let's turn it into a website that actually works — and looks unforgettable.</p>
                 <div className='banner_buttons'>
-                  <Link href='#'>View all services</Link>
-                  <Link href='#'>Book a call</Link>
+                  <Link href='/services'>View all services</Link>
+                  <Link href='/contactUs'>Book a call</Link>
                 </div>
               </div>
               <div className='banner_icons'>
@@ -71,21 +71,21 @@ export default function Footer() {
           <div className='footer_top_rightText'>
             <div className='footer_top_info_container'>
               <p>Navigation</p>
-              <Link href="#">Home</Link>
-              <Link href="#">Services</Link>
-              <Link href="#">Portfolio</Link>
-              <Link href="#">Contact</Link>
+              <Link href="/">Home</Link>
+              <Link href="/services">Services</Link>
+              <Link href="/portfolio">Portfolio</Link>
+              <Link href="/contactUs">Contact</Link>
             </div>
 
             <div className='footer_top_info_container'>
               <p>Services</p>
-              <Link href="#">Web Design</Link>
-              <Link href="#">Development</Link>
-              <Link href="#">Branding</Link>
-              <Link href="#">SEO & growth</Link>
+              <Link href="/services">Web Design</Link>
+              <Link href="/services">Development</Link>
+              <Link href="/services">Branding</Link>
+              <Link href="/services">SEO & growth</Link>
             </div>
 
-            <div className='footer_top_info_container'>
+            <div className='footer_top_info_container contact_info_links'>
               <p>Contact</p>
               <Link href="#">info@webbus.com</Link>
               <Link href="#">+1 (555) 000-000</Link>

@@ -66,7 +66,7 @@ export default function ContactUs () {
                     <form action="/">
 
                         <div className="form_info_user">
-                            <div className="input_item" style={{borderRight: '2px solid #525252'}}>
+                            <div className="input_item">
                                 <span>YOUR NAME</span>
                                 <input type="text" />
                             </div>
@@ -74,7 +74,7 @@ export default function ContactUs () {
                                 <span>YOUR EMAIL</span>
                                 <input type="text" />
                             </div>
-                            <div className="input_item" style={{borderRight: '2px solid #525252'}}>
+                            <div className="input_item">
                                 <span>COMPANY / BRAND (Optional)</span>
                                 <input type="text" />
                             </div>

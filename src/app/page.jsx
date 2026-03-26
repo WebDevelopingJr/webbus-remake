@@ -135,8 +135,8 @@ document.querySelectorAll('a,button').forEach((el) => {
               <p>We design custom digital experiences for startups and brands that want to stand out.</p>
           </div>
           <div className={styles.contactInfo}>
-            <Link href='#' className={styles.contact}>Services</Link>
-            <Link href='#'>Contact</Link>
+            <Link href='/services' className={styles.contact}>Services</Link>
+            <Link href='/contactUs'>Contact</Link>
           </div>
         </div>
         <div className={styles.division}>
@@ -272,7 +272,7 @@ document.querySelectorAll('a,button').forEach((el) => {
                 </div>
               </div>
             </div>
-            <Link href={'#'} className={styles.aboutEndButton}>Work with us <Image src={arrow} alt="arrow" width={20} height={20}/></Link>
+            <Link href='/contactUs' className={styles.aboutEndButton}>Work with us <Image src={arrow} alt="arrow" width={20} height={20}/></Link>
         </div>
       </section>
         
@@ -326,7 +326,7 @@ document.querySelectorAll('a,button').forEach((el) => {
                 <div className={styles.innerElements}>JAVASCRIPT</div>
                 <div className={styles.innerElements}>FIGMA</div>
               </div>
-              <Link href="#" >Get in touch</Link>
+              <Link href="/contactUs" >Get in touch</Link>
             </div>
             {/* Second part of the division */}
             <div className={styles.gridsServices}>
