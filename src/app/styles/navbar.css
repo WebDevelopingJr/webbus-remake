@@ -167,30 +167,45 @@
     left: 60px;
     transition: 0.3s ease;
 }
-/*
-.nav_items img {
-    width: 30px;
-    background-image: linear-gradient(135deg, #f06161 0%, #c64040 50%, #d54242 100%);
-    padding: 10px;
-    border-radius: 20px;
-    position: absolute;
-    top: 30px;
-    left: -25px;
-}
+@media (max-width: 625px) {
+    .header {
+        left: 20px;
+        transform: translate(0);
+    }
+    .header_items img {
+        width: 45px;
+    }
+    .header_items .nav_items img {
+        width: 25px;
+    }
+    /* Active image */
+    .header_items .activeImg {
+        top: 0;
+        left: 10px;
+        transform: translate(10px, 120px);
+    }
+    /* House home icon */
+    .header_items .nav_items img {
+        top: 65px;
+        left: 80px;
+    }
+    /* Links active*/
+    .active_items .service {
+        opacity: 1;
+        top: -50px;
+        left: 20px;
+    }
+    .active_items .aboutus {
+        top: 20px;
+        left: 150px;
+    }
+    .active_items .portfolio {
+        top: 130px;
+        left: 150px;
+    }
+    .active_items .contact {
+        top: 190px;
+        left: 0;
+    }
 
-.service {
-    top: 10px;
-    right: 120px;
 }
-.aboutus {
-    top: 100px;
-    right: 60px;
-}
-.portfolio {
-    top: 10px;
-    left: 120px;
-}
-.contact {
-    top: 100px;
-    left: 60px;
-} */
