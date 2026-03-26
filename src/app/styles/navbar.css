@@ -21,6 +21,38 @@
     border-radius: 20%;
     cursor: pointer;
 }
+.textCircle {
+    position: relative;
+    color: #fff;
+    top: 0;
+    left: 20px;
+    display: block;
+    transition: 0.3s ease;
+}
+.textCircle span {
+    position: absolute;
+    display: block;
+    transition: 0.3s ease;
+}
+.textCircle_M {
+    transform: rotate(332deg);
+    transition: 0.3s ease;
+}
+.textCircle_E {
+    top: -11px;
+    left: 18px;
+    transform: rotate(315deg);
+}
+.textCircle_N {
+    top: -25px;
+    left: 30px;
+    transform: rotate(301deg);
+}
+.textCircle_U {
+    top: -40px;
+    left: 38px;
+    transform: rotate(298deg);
+}
 .nav_items {
     display: flex;
     position: relative;
@@ -128,7 +160,31 @@
     transition: 0.3s ease;
     transform: rotate(360deg);
 }
+.header_items .textCircle_active span{
+    transition: 0.3s linear;
+}
+.header_items .textCircle_active .textCircle_M {
+    top: 10px;
+    left: 6px;
+    transform: rotate(336deg);
+    transition: 0.3s ease;
 
+}
+.header_items .textCircle_active .textCircle_E {
+    top: 1px;
+    left: 24px;
+    transform: rotate(324deg);
+}
+.header_items .textCircle_active .textCircle_N{
+    top: -12px;
+    left: 34px;
+    transform: rotate(299deg);
+}
+.header_items .textCircle_active .textCircle_U{
+    top: -29px;
+    left: 41px;
+    transform: rotate(293deg);
+}
 .active_items {
     transition: 0.3s ease;
 }
@@ -208,4 +264,48 @@
         left: 0;
     }
 
+    /* Text items  */
+    .textCircle {
+        position: relative;
+        color: #fff;
+        top: 0;
+        left: 20px;
+        display: block;
+        transition: 0.3s ease;
+    }
+    .textCircle_M {
+        top: -1px;
+        left: -2px;
+        transform: rotate(337deg);
+    }
+    .textCircle_E {
+        top: -11px;
+        left: 15px;
+        transform: rotate(313deg);
+    }
+    .textCircle_N {
+        top: -26px;
+        left: 25px;
+        transform: rotate(295deg);
+    }
+    .textCircle_U {
+        top: -45px;
+        left: 32px;
+        transform: rotate(298deg);
+    }
+
+    /* Active menu letters */
+    .header_items .textCircle_active .textCircle_M {
+        opacity: 0;
+
+    }
+    .header_items .textCircle_active .textCircle_E {
+        opacity: 0;
+    }
+    .header_items .textCircle_active .textCircle_N{
+        opacity: 0;
+    }
+    .header_items .textCircle_active .textCircle_U{
+        opacity: 0;
+    }
 }

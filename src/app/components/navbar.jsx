@@ -19,6 +19,12 @@ export default function Navbar() {
     <div className="header">
       <div className="header_items">
       <Image className={`${activeHeader ? 'activeImg' : ''}`} src={webbusMiniLogo} alt="WebbusBrandLogo" onClick={()=> setActiveHeader(el=> !el)} />
+        <div className={`textCircle ${activeHeader ? 'textCircle_active' : ''}`}>
+          <span className="textCircle_M">M</span>
+          <span className="textCircle_E">E</span>
+          <span className="textCircle_N">N</span>
+          <span className="textCircle_U">U</span>
+        </div>
       <div className={`nav_items ${activeHeader ? 'active_items' : ''}`}>
         <Image className="houseIcon" src={houseIcon} alt="homeImage" onClick={() => router.push('/')}/>
         <Link className="service" href="/services">Services</Link>
