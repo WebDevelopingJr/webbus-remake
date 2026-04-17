@@ -103,10 +103,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 200px;
+    overflow: hidden;
 }
 
 .serviceItem {
-    width: 1200px;
+    width: 1300px;
     height: 610px;
     display: flex;
     border: 1px solid #606060;
@@ -131,7 +133,7 @@
 
 .service_info {
     width: 50%;
-    padding: 30px 40px;
+    padding: 30px 70px;
     border-right: 1px solid #606060;
 }
 

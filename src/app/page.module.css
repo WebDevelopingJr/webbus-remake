@@ -1403,6 +1403,7 @@
 @media (max-width: 560px) {
     .main {
         background-size: 100%;
+        margin-bottom: 0px;
     }
     .title {
         width: 90%;
@@ -1482,6 +1483,10 @@
     }
     .banner_icons_inside img{
         width: 50px;
+    }
+    /* -------------------------------- about us -------------------------------- */
+    .about {
+        padding-top: 100px;
     }
     /* --------------------------------- footer --------------------------------- */
     .footer_top_leftText {

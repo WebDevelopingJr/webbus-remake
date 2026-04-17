@@ -1,5 +1,8 @@
 'use client';
 import React, { useEffect, useRef, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import Lenis from "@studio-freight/lenis";
 import BckBox from "../components/tools/bckg-box-color";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
@@ -14,9 +17,30 @@ export default function Services() {
             setSizeWidth({widthScreen: mainSize.current.offsetWidth, heightScreen: mainSize.current.offsetHeight})
         }
     }, [])
+
+    useEffect(() => {
+    const lenis = new Lenis({
+      duration: 3, // 🔥 controla qué tan lento
+      smooth: true,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
+  useEffect(() => {
+  AOS.init();
+}, []);
     return (
         <>
-        <Navbar />
         <main ref={mainSize} className="mainServices">
         {sizeWidth.widthScreen > 0 && sizeWidth.heightScreen > 0 && (
             <BckBox divWidth={sizeWidth?.widthScreen} divHeight={sizeWidth?.heightScreen} />
@@ -31,7 +55,7 @@ export default function Services() {
         </main>
         <div className="servicesContainer">
 
-            <div className="serviceItem">
+            <div className="serviceItem" data-aos="fade-right">
                 <div className="service_number"><span>01</span></div>
                 <div className="service_info">
                     <p className="info_top_text"> WEB DESIGN & DEVELOPMENT </p>
@@ -84,7 +108,7 @@ export default function Services() {
                     </div>
             </div>
 
-            <div className="serviceItem">
+            <div className="serviceItem" data-aos="fade-left">
                 <div className="service_number"><span>02</span></div>
                 <div className="service_info">
                     <p className="info_top_text"> WEB DESIGN & DEVELOPMENT </p>
@@ -127,8 +151,8 @@ export default function Services() {
                 </div>
             </div>
 
-            <div className="serviceItem">
-                <div className="service_number"><span>01</span></div>
+            <div className="serviceItem" data-aos="fade-right">
+                <div className="service_number"><span>03</span></div>
                 <div className="service_info">
                     <p className="info_top_text"> WEB DESIGN & DEVELOPMENT </p>
                     <h1>Web design</h1>
@@ -180,8 +204,8 @@ export default function Services() {
                     </div>
             </div>
 
-            <div className="serviceItem">
-                <div className="service_number"><span>01</span></div>
+            <div className="serviceItem" data-aos="fade-left">
+                <div className="service_number"><span>04</span></div>
                 <div className="service_info">
                     <p className="info_top_text"> WEB DESIGN & DEVELOPMENT </p>
                     <h1>Web design</h1>
@@ -233,8 +257,8 @@ export default function Services() {
                     </div>
             </div>
 
-            <div className="serviceItem">
-                <div className="service_number"><span>01</span></div>
+            <div className="serviceItem" data-aos="fade-right">
+                <div className="service_number"><span>05</span></div>
                 <div className="service_info">
                     <p className="info_top_text"> WEB DESIGN & DEVELOPMENT </p>
                     <h1>Web design</h1>

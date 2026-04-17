@@ -1,5 +1,7 @@
 'use client';
 import styles from "./page.module.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Navbar from "./components/navbar";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,6 +20,8 @@ import adobeH from "./tools-img/home/adobePh-vector.svg";
 
 import arrow from './tools-img/home/arrowsvg.svg'
 import star from './tools-img/home/star-about.png'
+
+import Lenis from "@studio-freight/lenis";
 import { useEffect, useState, useRef } from "react";
 
 export default function Home() {
@@ -63,30 +67,64 @@ export default function Home() {
 
     /* --------------------- set the styles of ring & point --------------------- */
 
-document.querySelectorAll('a,button').forEach((el) => {
-  el.addEventListener('mouseenter', () => {
-    ring.current.style.width = '40px'
-    ring.current.style.height = '40px'
-    dot.current.style.boxShadow = '0px 0px 8px 4px #ed4242'
-    size = ring.current.offsetWidth;
-  })
-  el.addEventListener('mouseleave', ()=> {
-    ring.current.style.width = '30px'
-    ring.current.style.height = '30px'
-    dot.current.style.boxShadow = 'none'
-    size = 30;
-  })
-})
+  const elements = document.querySelectorAll('a,button');
+
+  const handleEnter = () => {
+    if (!ring.current || !dot.current) return;
+
+    ring.current.style.width = '40px';
+    ring.current.style.height = '40px';
+    dot.current.style.boxShadow = '0px 0px 8px 4px #ed4242';
+  };
+
+  const handleLeave = () => {
+    if (!ring.current || !dot.current) return;
+
+    ring.current.style.width = '30px';
+    ring.current.style.height = '30px';
+    dot.current.style.boxShadow = 'none';
+  };
+
+  elements.forEach(el => {
+    el.addEventListener('mouseenter', handleEnter);
+    el.addEventListener('mouseleave', handleLeave);
+  });
+
+  return () => {
+    elements.forEach(el => {
+      el.removeEventListener('mouseenter', handleEnter);
+      el.removeEventListener('mouseleave', handleLeave);
+    });
+  };
   }, []);
 
 
   /* -------------------------------------------------------------------------- */
-  /*                                aboutUs code                                */
+  /*                                Library code                                */
   /* -------------------------------------------------------------------------- */
+useEffect(() => {
+    const lenis = new Lenis({
+      duration: 3, // 🔥 controla qué tan lento
+      smooth: true,
+    });
 
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
+  useEffect(() => {
+  AOS.init();
+}, []);
   return (
     <>
-      <Navbar />
       <main className={styles.main}>
         <div ref={ring} className={styles.cursor} style={{top: `${mousePosition.y - size/2}px`, left: `${mousePosition.x - size/2}px`}}>
           <div ref={dot} className={styles.point} style={{top: `${mousePosition.y}px`, left: `${mousePosition.x}px`}}></div>
@@ -167,7 +205,7 @@ document.querySelectorAll('a,button').forEach((el) => {
           
           <div className={styles.infoAboutContainer}>
             {/* First table */}
-              <div className={styles.infoStory}>
+              <div className={styles.infoStory} data-aos="fade-right">
                 <p className={styles.info_text}>OUR STORY</p>
                 <div className={styles.graphMap}>
                   <div className={styles.browser_nav}>
@@ -194,7 +232,7 @@ document.querySelectorAll('a,button').forEach((el) => {
 
               <div className={styles.infoAboutContainer2}>
                 {/* Second table */}
-                <div className={styles.ourValues}>
+                <div className={styles.ourValues} data-aos="fade-left">
                   <p className={styles.info_text}>WHAT WE STAND FOR</p>
                   <h1>Our values</h1>
                   <div className={styles.tableInfoValues}>
@@ -232,7 +270,7 @@ document.querySelectorAll('a,button').forEach((el) => {
                   </div>
                 </div>
                 {/* Third table */}
-                <div className={styles.infoProcess}>
+                <div className={styles.infoProcess} data-aos="fade-left">
                   <p className={styles.info_text}>CREATIVE STRATEGIES</p>
                   <h1>Our process</h1>
                     <div className={styles.processTable}>
@@ -294,7 +332,7 @@ document.querySelectorAll('a,button').forEach((el) => {
 
           <div className={styles.infoServicesContainer}>
             {/* First division */}
-            <div className={styles.bigService}>
+            <div className={styles.bigService} data-aos="fade-down-right">
               <p className={styles.info_text}>WHAT WE STAND FOR</p>
               <Image src={star} alt="test"/>
               <div className={styles.bigServiceInfo}>
@@ -331,7 +369,7 @@ document.querySelectorAll('a,button').forEach((el) => {
             {/* Second part of the division */}
             <div className={styles.gridsServices}>
               {/* Part 1 */}
-              <div className={styles.gServices}>
+              <div className={styles.gServices} data-aos="zoom-in-left">
                 <Image src={star} alt="image"/>
                 <p className={styles.info_text}>PERFOMANCE</p>
                 <div className={styles.gServicesText}>
@@ -340,7 +378,7 @@ document.querySelectorAll('a,button').forEach((el) => {
                 </div>
               </div>
               {/* Part 2 */}
-              <div className={styles.gServices}>
+              <div className={styles.gServices} data-aos="zoom-in-left">
                 <Image src={star} alt="image"/>
                 <p className={styles.info_text}>PERFOMANCE</p>
                 <div className={styles.gServicesText}>
@@ -349,7 +387,7 @@ document.querySelectorAll('a,button').forEach((el) => {
                 </div>
               </div>
               {/* Part 3 */}
-              <div className={styles.gServices}>
+              <div className={styles.gServices} data-aos="zoom-in-left">
                 <Image src={star} alt="image"/>
                 <p className={styles.info_text}>PERFOMANCE</p>
                 <div className={styles.gServicesText}>
@@ -358,7 +396,7 @@ document.querySelectorAll('a,button').forEach((el) => {
                 </div>
               </div>
               {/* Part 4 */}
-              <div className={styles.gServices}>
+              <div className={styles.gServices} data-aos="zoom-in-left">
                 <Image src={star} alt="image"/>
                 <p className={styles.info_text}>PERFOMANCE</p>
                 <div className={styles.gServicesText}>

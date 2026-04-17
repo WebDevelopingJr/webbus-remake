@@ -39,7 +39,6 @@ export default function Portfolio() {
   }, [])
   return (
     <>
-    <Header />
       <main id="mainServices" ref={mainBox}>
         {userSize.width > 0 && userSize.height > 0 && (
           <BckBox divWidth={userSize?.width} divHeight={userSize?.height} />

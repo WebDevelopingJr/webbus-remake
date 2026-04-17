@@ -12,7 +12,6 @@ export default function ContactUs () {
     }
     return (
     <>
-    <Navbar />
        <div className="generalContainer">
         <div className="contactContainer">
             <div className="contact_left_container">
