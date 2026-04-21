@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Header from '../components/navbar'
 import BckBox from '../components/tools/bckg-box-color'
+import Lenis from "@studio-freight/lenis";
 
 /* --------------------------------- images --------------------------------- */
 
@@ -34,6 +35,24 @@ export default function Portfolio() {
       return newDesign
     })
   }
+
+    useEffect(() => {
+      const lenis = new Lenis({
+        duration: 3, // 🔥 controla qué tan lento
+        smooth: true,
+      });
+    
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+    
+      requestAnimationFrame(raf);
+    
+      return () => {
+        lenis.destroy();
+      };
+    }, []);
   useEffect(()=> {
     filterDesigns('all')
   }, [])

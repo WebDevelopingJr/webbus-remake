@@ -23,7 +23,7 @@ export default function Navbar() {
       <div className={`nav_items ${activeHeader ? 'active_items' : ''}`}>
         <Image className="houseIcon" src={houseIcon} alt="homeImage" onClick={() => router.push('/')}/>
         <Link className="service" href="/services">Services</Link>
-        <Link className="aboutus" href="/">About us</Link>
+        <Link className="aboutus" href="/aboutus">About us</Link>
         <Link className="portfolio" href="/portfolio">Portfolio</Link>
         <Link className="contact" href="/contactUs">Contact</Link>
       </div>

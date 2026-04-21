@@ -1,0 +1,123 @@
+'use client';
+import React from "react";
+import { useState, useRef, useEffect } from "react";
+import BckBox from "../components/tools/bckg-box-color";
+
+import '../styles/aboutus.css'
+const AboutUs = () => {
+    const [ sizeWidth, setSizeWidth ] = useState({widthScreen: 0, heightScreen: 0})
+    const mainSize = useRef(null)
+    useEffect(()=> {
+        if(mainSize.current) {
+            setSizeWidth({widthScreen: mainSize.current.offsetWidth, heightScreen: mainSize.current.offsetHeight})
+        }
+    }, [])
+
+    return ( 
+    <>
+       <main ref={mainSize} className="mainServices">
+       {sizeWidth.widthScreen > 0 && sizeWidth.heightScreen > 0 && (
+           <BckBox divWidth={sizeWidth?.widthScreen} divHeight={sizeWidth?.heightScreen} />
+       )}
+           <div className="textContainer">
+             <span>02 - ABOUT US</span>
+             <h1>We create</h1>
+             <h1>Ideas</h1>
+             <h1>Into reality</h1>
+             <p>High-quality web design built for speed, performance, and results.</p>
+           </div>
+       </main>
+
+       <div className="peoplePresentation">
+        <div className="people_presentation">
+            <h1>The people behind the <span className="people_presentation_highlighted">Work</span></h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae, perferendis saepe sed facere corporis culpa dolores</p>
+        </div>
+        <div className="people_infoContainer">
+
+            <div className="people_container">
+                <span className="boldRed">FOUNDER - WEB MASTER</span>
+                <h2>Nestor Castillo</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea officiis blanditiis inventore! A enim nobis perferendis harum? Illo possimus doloremque ipsum molestias repellat at exercitationem hic, nesciunt culpa quasi autem?</p>
+                <div className="people_container_tools">
+                    <div className="tools">Adobe</div>
+                    <div className="tools">Adobe</div>
+                    <div className="tools">Adobe</div>
+                </div>
+            </div>
+
+            <div className="people_container">
+                <span className="boldRed" style={{color: '#69FF4B'}}>FOUNDER - WEB MASTER</span>
+                <h2>Nestor Castillo</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea officiis blanditiis inventore! A enim nobis perferendis harum? Illo possimus doloremque ipsum molestias repellat at exercitationem hic, nesciunt culpa quasi autem?</p>
+                <div className="people_container_tools">
+                    <div className="tools">Adobe</div>
+                    <div className="tools">Adobe</div>
+                    <div className="tools">Adobe</div>
+                </div>
+            </div>
+
+            <div className="people_container">
+                <span className="boldRed">FOUNDER - WEB MASTER</span>
+                <h2>Nestor Castillo</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea officiis blanditiis inventore! A enim nobis perferendis harum? Illo possimus doloremque ipsum molestias repellat at exercitationem hic, nesciunt culpa quasi autem?</p>
+                <div className="people_container_tools">
+                    <div className="tools">Adobe</div>
+                    <div className="tools">Adobe</div>
+                    <div className="tools">Adobe</div>
+                </div>
+            </div>
+
+        </div>
+       </div>
+       {/* Create inf banner */}
+       <div className="infBanner">
+
+       </div>
+       {/* what we do banner */}
+       <div className="weDo_container">
+           <div className="weDo_info_container">
+               <h1>Four things we always compromise</h1>
+               <div className="weDo_division"></div>
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident totam voluptas itaque illo a deserunt obcaecati perspiciatis ullam! Voluptates velit eius reprehenderit?</p>
+           </div>
+           <div className="weDo_boxes_container">
+
+                <div className="boxes_container">
+                    <div className="number">01</div>
+                    <div className="boxes_text_container">
+                        <h2>Design is never decoration</h2>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae aspernatur rem perspiciatis esse possimus cumque exercitationem voluptatibus, at est eaque explicabo illum iusto voluptas debitis ipsa voluptatem. Ipsa, itaque recusandae!</p>
+                    </div>
+                </div>
+                
+                <div className="boxes_container">
+                    <div className="number">02</div>
+                    <div className="boxes_text_container">
+                        <h2>Design is never decoration</h2>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae aspernatur rem perspiciatis esse possimus cumque exercitationem voluptatibus, at est eaque explicabo illum iusto voluptas debitis ipsa voluptatem. Ipsa, itaque recusandae!</p>
+                    </div>
+                </div>
+
+                <div className="boxes_container">
+                    <div className="number">03</div>
+                    <div className="boxes_text_container">
+                        <h2>Design is never decoration</h2>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae aspernatur rem perspiciatis esse possimus cumque exercitationem voluptatibus, at est eaque explicabo illum iusto voluptas debitis ipsa voluptatem. Ipsa, itaque recusandae!</p>
+                    </div>
+                </div>
+
+                <div className="boxes_container">
+                    <div className="number">04</div>
+                    <div className="boxes_text_container">
+                        <h2>Design is never decoration</h2>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae aspernatur rem perspiciatis esse possimus cumque exercitationem voluptatibus, at est eaque explicabo illum iusto voluptas debitis ipsa voluptatem. Ipsa, itaque recusandae!</p>
+                    </div>
+                </div>
+           </div>
+       </div>
+    </>
+    )
+}
+
+export default AboutUs
