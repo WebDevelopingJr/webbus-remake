@@ -75,46 +75,54 @@ const AboutUs = () => {
 
        </div>
        {/* what we do banner */}
-       <div className="weDo_container">
+       <div className="weDo_general_container">
+        <div className="weDo_container">
            <div className="weDo_info_container">
-               <h1>Four things we always compromise</h1>
-               <div className="weDo_division"></div>
-               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident totam voluptas itaque illo a deserunt obcaecati perspiciatis ullam! Voluptates velit eius reprehenderit?</p>
+               <h1>Four things <br /> we always compromise</h1>
+               <div className="weDo_info_pContainer">
+                <div className="weDo_division"></div>
+               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum eveniet cum, necessitatibus expedita voluptates odio, voluptas rem nesciunt voluptatibus asperiores ad qui dolorem culpa. Repellendus saepe reprehenderit laudantium asperiores quae.</p>
+               </div>
            </div>
            <div className="weDo_boxes_container">
 
                 <div className="boxes_container">
-                    <div className="number">01</div>
+                    <div className="number"><span>01</span></div>
                     <div className="boxes_text_container">
+                        <span className="mini_preTitle">Design</span>
                         <h2>Design is never decoration</h2>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae aspernatur rem perspiciatis esse possimus cumque exercitationem voluptatibus, at est eaque explicabo illum iusto voluptas debitis ipsa voluptatem. Ipsa, itaque recusandae!</p>
                     </div>
                 </div>
                 
                 <div className="boxes_container">
-                    <div className="number">02</div>
+                    <div className="number"><span>02</span></div>
                     <div className="boxes_text_container">
+                        <span className="mini_preTitle">Design</span>
                         <h2>Design is never decoration</h2>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae aspernatur rem perspiciatis esse possimus cumque exercitationem voluptatibus, at est eaque explicabo illum iusto voluptas debitis ipsa voluptatem. Ipsa, itaque recusandae!</p>
                     </div>
                 </div>
 
                 <div className="boxes_container">
-                    <div className="number">03</div>
+                    <div className="number"><span>03</span></div>
                     <div className="boxes_text_container">
+                        <span className="mini_preTitle">Design</span>
                         <h2>Design is never decoration</h2>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae aspernatur rem perspiciatis esse possimus cumque exercitationem voluptatibus, at est eaque explicabo illum iusto voluptas debitis ipsa voluptatem. Ipsa, itaque recusandae!</p>
                     </div>
                 </div>
 
                 <div className="boxes_container">
-                    <div className="number">04</div>
+                    <div className="number"><span>04</span></div>
                     <div className="boxes_text_container">
+                        <span className="mini_preTitle">Design</span>
                         <h2>Design is never decoration</h2>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae aspernatur rem perspiciatis esse possimus cumque exercitationem voluptatibus, at est eaque explicabo illum iusto voluptas debitis ipsa voluptatem. Ipsa, itaque recusandae!</p>
                     </div>
                 </div>
            </div>
+        </div>
        </div>
     </>
     )
