@@ -3,6 +3,8 @@ import React from "react";
 import { useState, useRef, useEffect } from "react";
 import BckBox from "../components/tools/bckg-box-color";
 
+import Footer from "../components/footer";
+
 import '../styles/aboutus.css'
 const AboutUs = () => {
     const [ sizeWidth, setSizeWidth ] = useState({widthScreen: 0, heightScreen: 0})
@@ -72,7 +74,7 @@ const AboutUs = () => {
        </div>
        {/* Create inf banner */}
        <div className="infBanner">
-
+            
        </div>
        {/* what we do banner */}
        <div className="weDo_general_container">
@@ -95,7 +97,7 @@ const AboutUs = () => {
                     </div>
                 </div>
                 
-                <div className="boxes_container">
+                <div className="boxes_container box_green">
                     <div className="number"><span>02</span></div>
                     <div className="boxes_text_container">
                         <span className="mini_preTitle">Design</span>
@@ -104,7 +106,7 @@ const AboutUs = () => {
                     </div>
                 </div>
 
-                <div className="boxes_container">
+                <div className="boxes_container box_cyan">
                     <div className="number"><span>03</span></div>
                     <div className="boxes_text_container">
                         <span className="mini_preTitle">Design</span>
@@ -113,7 +115,7 @@ const AboutUs = () => {
                     </div>
                 </div>
 
-                <div className="boxes_container">
+                <div className="boxes_container box_yellow">
                     <div className="number"><span>04</span></div>
                     <div className="boxes_text_container">
                         <span className="mini_preTitle">Design</span>
@@ -124,6 +126,7 @@ const AboutUs = () => {
            </div>
         </div>
        </div>
+       <Footer />
     </>
     )
 }

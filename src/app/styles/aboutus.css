@@ -153,11 +153,16 @@
     content: '';
     width: 0%;
     height: 2px;
-    background-image: linear-gradient(to right, #ffffff00, #de1b1b, #e90c0c, #ffffff00);
+    background-image: linear-gradient(to right, #ffffff00, #e83939, #e34545, #ffffff00);
     position: absolute; 
     top: 0;
     left: 50%;
     transform: translateX(-50%);
+    transition: 0.3s;
+}
+.people_container:hover::before {
+    width: 100%;
+    transition: 0.3s;
 }
 .people_container:nth-child(1) {
     border-radius: 20px 0 0 20px;
@@ -165,6 +170,9 @@
 .people_container:nth-child(3) {
     border: none;
     border-radius: 0px 20px 20px 0;
+}
+.people_container:nth-child(3) .boldRed {
+    color: rgb(224, 32, 224);
 }
 .boldRed {
     color: #e31b1b;
@@ -197,7 +205,7 @@
 }
 .weDo_container {
     width: 90%;
-    max-width: 1800px;
+    max-width: 1600px;
 }
 
 /* Text info */
@@ -256,21 +264,46 @@
 }
 .boxes_container::before {
     content: '';
-    width: 2px;
+    width: 4px;
     height: 0%;
     left: 0;
     z-index: 4;
     background-color: #D73D3D;
     position: absolute;
+    transition: 0.5s;
 }
 .boxes_container::after {
     content: '';
-    width: 2px;
+    width: 4px;
     height: 100%;
     left: 0px;
     z-index: 2;
     background-color: #ababab;
     position: absolute;
+}
+
+/* Boxes different colors */
+
+/* --------------------------------- Green --------------------------------- */
+.box_green .number{
+    color: rgb(72, 188, 4);
+}
+.box_green::before {
+    background-color: rgb(72, 188, 4);
+}
+/* ---------------------------------- Cyan ---------------------------------- */
+.box_cyan .number{
+    color: rgb(33, 170, 224);
+}
+.box_cyan::before {
+    background-color: rgb(33, 170, 224);
+}
+/* --------------------------------- yellow --------------------------------- */
+.box_yellow .number {
+    color: rgb(209, 209, 4);
+}
+.box_yellow::before {
+    background-color: rgb(209, 209, 4);
 }
 .number {
     width: 100px;
@@ -301,6 +334,19 @@
 .boxes_text_container .mini_preTitle {
     color: #D73D3D;
     margin-bottom: 20px;
+}
+/* Different colors pre-text edit */
+/* --------------------------------- Green --------------------------------- */
+.box_green .boxes_text_container .mini_preTitle {
+    color: rgb(72, 188, 4);
+}
+/* ---------------------------------- cyan ---------------------------------- */
+.box_cyan .boxes_text_container .mini_preTitle {
+    color: rgb(33, 170, 224);
+}
+/* --------------------------------- yellow --------------------------------- */
+.box_yellow .boxes_text_container .mini_preTitle {
+    color: rgb(209, 209, 4);
 }
 .boxes_text_container h2 {
     margin: 0 0 10px 0;
