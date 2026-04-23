@@ -193,8 +193,54 @@
     border-radius: 10px;
 }
 
+/* -------------------------------------------------------------------------- */
+/*                                 Info banner                                */
+/* -------------------------------------------------------------------------- */
+.infBanner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    background-color: #212121;
+    padding: 35px 0;
+    overflow: hidden;
+}
+.inf_group {
+    width: 150%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1em;
+    animation: slide 5s linear infinite;
+}
 
-/* What we do section */
+.inf_elements {
+    flex: 0 0 15em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.inf_elements::before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    display: block;
+    background-color: #df4242;
+    border-radius: 50%;
+}
+@keyframes slide {
+    from {
+        translate: 0;
+    }
+    to {
+        translate: -50%;
+    }
+}
+/* -------------------------------------------------------------------------- */
+/*                             What we do section                             */
+/* -------------------------------------------------------------------------- */
 
 .weDo_general_container {
     width: 100%;

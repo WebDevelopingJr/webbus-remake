@@ -4,7 +4,6 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Lenis from "@studio-freight/lenis";
 import BckBox from "../components/tools/bckg-box-color";
-import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import '../styles/services.css'
 
@@ -24,7 +23,7 @@ export default function Services() {
       smooth: true,
     });
 
-    function raf(time) {
+    function raf(time) {  
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
