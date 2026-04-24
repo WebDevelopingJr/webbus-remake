@@ -60,7 +60,18 @@ const AboutUs = () => {
         </div>
         <div className="people_infoContainer">
 
-            <div className="people_container" data-aos="fade-right">
+            <div className="people_container" data-aos="fade-right" data-aos-delay="200">
+                <span className="boldRed">FOUNDER - WEB MASTER</span>
+                <h2>Nestor E. Castillo</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea officiis blanditiis inventore! A enim nobis perferendis harum? Illo possimus doloremque ipsum molestias repellat at exercitationem hic, nesciunt culpa quasi autem?</p>
+                <div className="people_container_tools">
+                    <div className="tools">Adobe</div>
+                    <div className="tools">Adobe</div>
+                    <div className="tools">Adobe</div>
+                </div>
+            </div>
+
+            <div className="people_container" data-aos="zoom-out-up" data-aos-delay="200">
                 <span className="boldRed">FOUNDER - WEB MASTER</span>
                 <h2>Nestor Castillo</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea officiis blanditiis inventore! A enim nobis perferendis harum? Illo possimus doloremque ipsum molestias repellat at exercitationem hic, nesciunt culpa quasi autem?</p>
@@ -71,20 +82,9 @@ const AboutUs = () => {
                 </div>
             </div>
 
-            <div className="people_container" data-aos="zoom-out-up">
-                <span className="boldRed" style={{color: '#69FF4B'}}>FOUNDER - WEB MASTER</span>
-                <h2>Nestor Castillo</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea officiis blanditiis inventore! A enim nobis perferendis harum? Illo possimus doloremque ipsum molestias repellat at exercitationem hic, nesciunt culpa quasi autem?</p>
-                <div className="people_container_tools">
-                    <div className="tools">Adobe</div>
-                    <div className="tools">Adobe</div>
-                    <div className="tools">Adobe</div>
-                </div>
-            </div>
-
-            <div className="people_container" data-aos="fade-left">
+            <div className="people_container" data-aos="fade-left" data-aos-delay="200">
                 <span className="boldRed">FOUNDER - WEB MASTER</span>
-                <h2>Nestor Castillo</h2>
+                <h2>Elisa L. Espinosa</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea officiis blanditiis inventore! A enim nobis perferendis harum? Illo possimus doloremque ipsum molestias repellat at exercitationem hic, nesciunt culpa quasi autem?</p>
                 <div className="people_container_tools">
                     <div className="tools">Adobe</div>
