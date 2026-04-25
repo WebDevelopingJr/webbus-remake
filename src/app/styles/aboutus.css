@@ -453,7 +453,17 @@
         margin-bottom: 50px;
     }
 }
-
+@media (max-width: 650px) {
+    .service_number {
+        width: 40%;
+    }
+    .textContainer {
+        width: 90%;
+    }
+    .textContainer::before {
+        width: auto;
+    }
+}
 @media (max-width: 600px) {
     .people_presentation h1 {
         width: 100%;

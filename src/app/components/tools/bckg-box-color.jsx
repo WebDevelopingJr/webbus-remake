@@ -12,12 +12,24 @@ export default function BckBox({divWidth, divHeight}) {
 
     const wrappedRef = useRef(null)
     useEffect(()=> {
+        const handleResize = () => {
         let cols = Math.floor(divWidth / CELLS) + 1
         let rows = Math.floor(divHeight / CELLS) + 1
 
-        setTotalBox({columns: cols, rows: rows, total: cols * rows});
-        console.log(cols, rows)
+        setTotalBox({
+            columns: cols, 
+            rows: rows,
+            total: cols * rows
+        });
+        }
+        
+        handleResize()
 
+        window.addEventListener('resize', handleResize);
+            
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
     }, []);
 
     const boxColor = (index) => {
@@ -79,7 +91,6 @@ export default function BckBox({divWidth, divHeight}) {
             return () => clearInterval(sparks)
             
         }, [totalBox.total])
-        console.log(arrGrids.length)
     return (
         <>
             <div ref={wrappedRef} className="gridContainer" style={{
