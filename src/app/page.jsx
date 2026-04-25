@@ -8,6 +8,7 @@ import Link from "next/link";
 import CountUp from 'react-countup';
 import useMousePosition from './components/functions/useMousePosition'
 import Footer from "./components/footer";
+
 /* ---------------------------------- logos --------------------------------- */
 import html from './tools-img/home/html-5-svgrepo-com.svg'
 import css from "./tools-img/home/css-vector.svg";

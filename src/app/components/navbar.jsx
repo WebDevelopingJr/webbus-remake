@@ -13,35 +13,14 @@ export default function Navbar() {
   const [activeHeader, setActiveHeader] = useState(false)
   const router = useRouter();
 
-  const [headerP, setHeaderP] = useState('center')
-
-  const headerRef = useRef(null)
-  const [mousePosition, setMousePosition] = useState({top: 30,left: null})
-  const handleMouseMove = (e) => {
-    setMousePosition({top: e.clientY - 50, left: e.clientX});
-    console.log(e.clientX, e.clientY)
-    
-  };
-  const headerDown = () => {
-      window.addEventListener('mousemove', handleMouseMove)
-      window.addEventListener('mouseup', headerUp);
-  }
-
-  const headerUp = () => {
-    window.removeEventListener('mousemove', handleMouseMove)
-    window.removeEventListener('mouseup', headerUp);
-  }
-
-    
-
 
     return (
     <>
-    <div ref={headerRef} className="header" style={{top: mousePosition.top, left: mousePosition.left}} onMouseDown={headerDown} onMouseUp={headerUp}>
+    <div className="header">
       <div className="header_items">
       <Image className={`${activeHeader ? 'activeImg' : ''}`} src={webbusMiniLogo} alt="WebbusBrandLogo" draggable="false" onClick={()=> setActiveHeader(el=> !el)} />
 
-      <div className={`nav_items ${activeHeader ? 'active_items' : ''}`} onMouseDown={(e) => e.stopPropagation()}>
+      <div className={`nav_items ${activeHeader ? 'active_items' : ''} `}>
         <Image className="houseIcon" src={houseIcon} alt="homeImage" onClick={() => router.push('/')}/>
         <Link className="service" href="/services" onClick={()=> setActiveHeader(false)}>Services</Link>
         <Link className="aboutus" href="/aboutus" onClick={()=> setActiveHeader(false)}>About us</Link>
